@@ -1,0 +1,64 @@
+<idea-plugin>
+    <!-- 插件唯一id，不能和其他插件id重复 -->
+    <id>cn.sheva.idea.plugin.template</id>
+
+    <!-- 插件名称（在插件时常搜索插件时，搜索的就是这个名称） -->
+    <name>IdeaPluginTemplate</name>
+
+    <!-- 版本号 -->
+    <version>1.0</version>
+
+    <!-- 供应商主页和email -->
+    <vendor email="udoless@gmail.com" url="https://gitee.com/JustryDeng/projects"/>
+
+    <!-- 插件描述，支持HTML标签 -->
+    <description><![CDATA[
+        Idea plugin template, Welcome to use.....
+        ]]></description>
+
+    <!-- 插件版本变更信息，支持HTML标签； 将展示在 settings | Plugins 对话框和插件仓库的Web页面 -->
+    <change-notes><![CDATA[
+        <ul>
+            <li>since 2021-12-15</li>
+        </ul>
+        ]]></change-notes>
+
+
+    <!--
+        插件兼容IDEA的最大和最小 build 号，两个属性可以任选一个或者同时使用,
+        please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description
+    -->
+    <idea-version since-build="173.0"/>
+
+    <!-- 插件所依赖的其他插件的id -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <!--
+        提示：action标签和group标签的id字段值自取即可
+     -->
+    <actions>
+        <!--
+            示例一：在MainMenu菜单下的HelpMenu菜单里，最前面增加一个叫'Hello'的按钮
+        -->
+        <action id="cn.sheva.idea.plugin.template.HelloAction" class="cn.sheva.idea.plugin.template.HelloAction" text="Hello"
+            description="Say hello.">
+            <!--  指定父节点 action 或 action group 被添加到的位置 -->
+            <add-to-group group-id="HelpMenu" anchor="first"/>
+        </action>
+
+        <!--
+            示例二：在MainMenu菜单的最后面，增加一个 叫'JustryDeng'的菜单,其中字母J带下划线
+        -->
+        <group id="cn.sheva.idea.plugin.template.DemoGroup" text="_DemoGroup" description="Demo group...">
+            <!--  指定父节点 action 或 action group 被添加到的位置 -->
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <!-- 当前菜单下，再添加一个叫'Say Hey'的按钮,其中字母S带下划线 （注：当然还可以嵌套菜单） -->
+            <action id="cn.sheva.idea.plugin.template.HelloAction2" class="cn.sheva.idea.plugin.template.HelloAction" text="Say _Hello" description="Say hello."/>
+        </group>
+    </actions>
+
+</idea-plugin>
